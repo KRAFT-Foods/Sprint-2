@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<title>
+This is the title of my simple web page
+</title>
+</head>
+
+<body bgcolor=FFFFFF>
+
+<h1> This is a "h1" level header </h1>
+
+<h6> This is a smaller h6 level header </h6>
+
+<p> This is a paragrph. Also followed by a line break </br>
+Shows here.
+</p>
+
+<p> I can also <strong> emphasize </strong> text </p>
+
+
+<p> Here is a nce ordered list: </br>
+
+<ol>
+	<li> Ordered list item 1 
+	<li> Ordered list item 2
+</ol>
+
+</p>
+
+<p> I can also write an unordered list 
+
+<ul>
+<li>  First unordered item
+<li> Second unordered item
+</ul>
+
+</body>
+</HTML>
