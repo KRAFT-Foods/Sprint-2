@@ -1,0 +1,52 @@
+main {
+  height: 100%;
+  margin: 0; }
+  main #products {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    main #products .product {
+      position: relative;
+      width: 24.4%;
+      height: 50vh;
+      margin: 1px;
+      margin-left: 0;
+      border: none;
+      background: #e7e7e7; }
+      main #products .product * {
+        transition: all 0.3s ease; }
+      main #products .product img {
+        position: absolute;
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        top: 0;
+        object-fit: contain;
+        background: #e7e7e7; }
+      main #products .product .name {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        padding: 4%; }
+      main #products .product .price {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        bottom: 0;
+        padding: 4%; }
+      main #products .product .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: #fff; }
+      main #products .product:hover .overlay {
+        opacity: 0.5; }
+      main #products .product:hover .name {
+        opacity: 1; }
+      main #products .product:hover .price {
+        opacity: 1; }
+
+/*# sourceMappingURL=list.css.map */

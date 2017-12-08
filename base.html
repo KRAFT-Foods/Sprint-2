@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load filters %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>KRAFT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+		{% block head %}
+		{% endblock %}
+
+	</head>
+	<body>
+		<aside id="easteregg"></aside>
+		<header>
+			<div id="sub">
+				<nav id="gender">
+					{% for gender in genders %}
+						<input type="radio" name="gender" id="{{gender}}" value="{{gender}}">
+						<label for='{{gender}}'>{{ gender|upper }}</label>
+					{% endfor %}
+				</nav>
+				<a id="shoppingcart" href="{% url 'cart' %}">
+					<span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDU5LjUyOSA0NTkuNTI5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NTkuNTI5IDQ1OS41Mjk7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTcsNTUuMjMxaDQ4LjczM2w2OS40MTcsMjUxLjAzM2MxLjk4Myw3LjM2Nyw4Ljc4MywxMi40NjcsMTYuNDMzLDEyLjQ2N2gyMTMuMzVjNi44LDAsMTIuNzUtMy45NjcsMTUuNTgzLTEwLjIgICAgbDc3LjYzMy0xNzguNWMyLjI2Ny01LjM4MywxLjctMTEuMzMzLTEuNDE3LTE2LjE1Yy0zLjExNy00LjgxNy04LjUtNy42NS0xNC4xNjctNy42NUgyMDYuODMzYy05LjM1LDAtMTcsNy42NS0xNywxNyAgICBzNy42NSwxNywxNywxN0g0MTYuNWwtNjIuOSwxNDQuNUgxNjQuMzMzTDk0LjkxNywzMy42OThjLTEuOTgzLTcuMzY3LTguNzgzLTEyLjQ2Ny0xNi40MzMtMTIuNDY3SDE3Yy05LjM1LDAtMTcsNy42NS0xNywxNyAgICBTNy42NSw1NS4yMzEsMTcsNTUuMjMxeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMzAzMDMxIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik0xMzUuNDMzLDQzOC4yOThjMjEuMjUsMCwzOC41MzMtMTcuMjgzLDM4LjUzMy0zOC41MzNzLTE3LjI4My0zOC41MzMtMzguNTMzLTM4LjUzM1M5Ni45LDM3OC41MTQsOTYuOSwzOTkuNzY0ICAgIFMxMTQuMTgzLDQzOC4yOTgsMTM1LjQzMyw0MzguMjk4eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMzAzMDMxIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik0zNzYuMjY3LDQzOC4yOThjMC44NSwwLDEuOTgzLDAsMi44MzMsMGMxMC4yLTAuODUsMTkuNTUtNS4zODMsMjYuMzUtMTMuMzE3YzYuOC03LjY1LDkuOTE3LTE3LjU2Nyw5LjM1LTI4LjA1ICAgIGMtMS40MTctMjAuOTY3LTE5LjgzMy0zNy4xMTctNDEuMDgzLTM1LjdjLTIxLjI1LDEuNDE3LTM3LjExNywyMC4xMTctMzUuNyw0MS4wODMgICAgQzMzOS40MzMsNDIyLjQzMSwzNTYuMTUsNDM4LjI5OCwzNzYuMjY3LDQzOC4yOTh6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMzMDMwMzEiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /></span>
+					<span id="cartcount">{{request|cart_size}}</span>
+				</a>
+				<logo><a href="/"><span class="highlight">K</span> R A F T</a></logo>
+
+			</div>
+			<div id="departments">
+				<nav>
+					{% for department in departments %}
+						<!-- <input type="radio" name="department" id="{{department}}" value="{{department}}"> -->
+						<!-- <label class="department" for="{{department}}"> -->
+							<a class ="department" id="{{department}}">{{department|upper}}</a>
+						<!-- </label> -->
+					{% endfor %}
+				</nav>
+				<aside id="focus"></aside>
+				<aside>
+					<div id="categories"></div>
+				</aside>
+
+
+			</div>
+		</header>
+
+
+
+
+
+		<main>
+
+				{% block content %}
+				{% endblock %}
+	  </main>
+		<footer>
+
+				<a href="{% url 'about' %}">ABOUT</a>
+				<p id="copright">&copy; 2017 - Robert</p>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="{% static 'js/cookie.min.js'%}" charset="utf-8"></script>
+		<script src="{% static 'js/navbar.js'%}" charset="utf-8"></script>
+		<script src="{% static 'js/shoppingcart.js'%}" charset="utf-8"></script>
+		{% block scripts %}
+		{% endblock %}
+	</body>
+</html>

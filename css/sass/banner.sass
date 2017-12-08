@@ -1,0 +1,80 @@
+@import "colors"
+=test($img)
+	background: url($img)
+
+=banner()
+	width: 100%
+	height: 60vh
+	overflow: hidden
+	transform: translateY(-5%)
+	position: relative
+
+=focus($image)
+	position: absolute
+	width: 102%
+	transform: translateX(-1%)
+
+	height: 100%
+	background: url($image)
+	background-size: cover
+	filter: blur(1px)
+	background-position: center
+
+=overlay
+	opacity: .3
+	width: 100%
+	height: 100%
+	background: $bg-contrast
+
+=overlaylogo
+	transform: translateY(-100%)
+	width: 100%
+	height: 100%
+	background: url('../assets/logo_gold.png')
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 10%
+	opacity: .6
+
+=focuslogo
+	// transform: translateY(-100%)
+	width: 100%
+	height: 100%
+	background: url('../assets/logo.png')
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 20%
+
+=title
+	position: relative
+	top: 50%
+	transform: translateY(-50%)
+	opacity: 1
+	text-align: center
+	font-weight: bold
+	width: 100%
+	z-index: 1000
+	filter: blur(0)
+	color: $font-contrast
+	padding: auto
+	margin: auto
+	font-size: 200%
+	// font-weight: 300
+	z-index: 1000
+	font-style: italic
+
+=sub-title
+	position: relative
+	top: 50%
+	transform: translateY(-40%)
+	opacity: 1
+	text-align: center
+	width: 100%
+	z-index: 1000
+	filter: blur(0)
+	color: $font-contrast
+	padding: auto
+	margin: auto
+	font-size: 100%
+	font-weight: 400
+	z-index: 1000

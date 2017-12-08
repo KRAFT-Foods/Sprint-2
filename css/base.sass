@@ -1,0 +1,297 @@
+@import 'sass/animations'
+@import 'sass/sizes'
+@import 'sass/colors'
+@import 'sass/fonts'
+
+
+
+
+a
+	text-decoration: none
+	color: inherit
+
+.disabled
+	cursor: not-allowed
+
+*
+	pointer-events: auto
+
+#easteregg
+	position: fixed
+	transform: translateY(-100%)
+	width: 100vw
+	height: 40vh
+	background: saturate(darken(#145214,0%),20%)
+	// background: green
+	// background: linear-gradient(to right, #a873d6 0%,#f4558d 39%,#ff070b 100%)
+	//#D4AF37
+	// opacity: 0
+	// animation: color-switch 2s 1s ease
+	// background-image: url('https://media.giphy.com/media/9mL99dUOnQPWo/giphy.gif')
+	// background-repeat: repeat
+	// background-size: 10px
+	z-index: 10000
+
+
+input[type=radio]
+	display: none
+
+body
+	overflow-x: hidden
+
+	user-drag: none
+	user-select: none
+	font-family: $font-stack
+	font-weight: 500
+	color: $font-primary
+	padding: 0
+	margin: 0
+	position: relative
+	width: 100vw
+
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	align-items: stretch
+	// height: 200vh
+
+	height: 100%
+
+
+
+header
+	position: fixed
+	width: 100%
+	background-color: $bg-primary
+	color: $font-primary
+	z-index: 100
+
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+
+
+
+	#sub
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: .7% 3%
+		height: 7vh
+		background: $bg-primary
+		z-index: 100
+
+		logo
+			color: $font-primary
+			font-size: $font-size-logo
+			font-family: $font-logo
+			position: absolute
+			text-align: center
+			// color: crimson
+			// width: 100%
+			// margin: auto
+			left: 0
+			right: 0
+			vertical-align: middle
+			transition: transform .4s cubic-bezier(.17,.67,.47,1.03)
+			z-index: 60
+
+			.highlight
+				color: linear-gradient(to right,darken($font-complimentary,10%) $bg-contrast)
+
+			// &:after
+			// 	width: 20%
+			// 	display: block
+			// 	margin: auto
+			// 	content: ''
+			// 	height: 1px
+			// 	// background: linear-gradient(to right,blue,red)
+			// 	background: linear-gradient(to right,$bg-primary,$font-complimentary,$bg-primary)
+
+			&:active
+				transform: scale(1.1)
+
+		nav#gender
+			width: 30%
+			position: relative
+			display: flex
+			font-size: $font-size-h2
+			color: $font-secondary
+			z-index: 200
+			height: 100%
+			vertical-align: middle
+			margin: auto 0
+
+
+
+
+
+
+
+			label
+				display: inline-block
+				vertical-align: middle
+				position: relative
+				margin-top: auto
+				margin-bottom: auto
+				margin-right: 2.5vw
+				// margin-right: 2%
+				cursor: pointer
+				transition: color .3s ease
+
+
+
+
+				&:after
+					transition: bottom .3s ease
+					content: '▲'
+					transform: scaleX(1.4)
+					color: $bg-contrast
+					display: block
+					position: absolute
+					text-align: center
+					bottom: -100%
+					width: 100%
+					opacity: 0
+					height: 10%
+					pointer-events: none
+
+
+
+
+
+			input[type="radio"][name="gender"]:checked+label
+				color: $font-primary
+				&:after
+					opacity: 1
+					transform: scaleX(1.4)
+					bottom: -60%
+				&:active
+					// text-shadow: 1px 1px 2px rgba(150, 150, 150, 1)
+					transform: scale(1.05)
+		#shoppingcart
+			z-index: 200
+			text-align: right
+			display: flex
+			// justify-content: center
+
+			align-items: center
+			img
+				height: 3vh
+				width: 3vw
+
+			#cartcount
+				font-weight: 300
+
+	#departments
+		width: 100%
+		background: $bg-contrast
+		z-index: 100
+		nav
+			position: relative
+			color: $font-contrast
+			padding: 1% .5%
+			font-size: $font-size-h4
+			font-weight: normal
+			z-index: 3000
+			left: -100%
+			animation-fill-mode: forwards
+			z-index: 100
+
+			.department
+				position: relative
+
+				margin:  0 .75%
+				padding: .35% .25%
+				box-sizing: border-box
+				cursor: pointer
+
+		&:hover
+			#categories
+				display: flex
+				animation: opace-in .2s .1s ease-in-out forwards
+				// animation:  slide-in-from-top  .2s .1s ease-in-out forwards
+
+			#focus
+				display: block
+				animation: partial-opace-in .2s .1s ease-in-out forwards
+
+
+		aside
+			position: absolute
+			width: 100%
+			// padding-top: 2%
+
+		#categories
+
+			width: 100%
+			background: white
+			// top: 70%
+			display: none
+			opacity: 0
+			padding: 1% 2.5%
+			flex-direction: column
+			flex-wrap: wrap
+			justify-content: flex-start
+			align-content: flex-start
+			z-index: 50
+
+
+			.category
+				// display: inline-block
+				font-size: $font-size-h4
+				margin-bottom: 1%
+				padding: .5% 0
+				margin: auto 0
+				z-index: 45
+
+
+		#focus
+			position: absolute
+			top: 10vh
+			height: 90vh
+			width: 100vw
+			background: $bg-contrast
+			// background: #000
+			display: none
+			opacity: 0
+			z-index: 0
+
+			&:hover
+				display: none
+
+
+.slide-in
+	animation: slide-in-from-left .5s ease-out forwards
+
+main
+	position: relative
+	padding: 9.5% 0 1% 0
+	// width: 100%
+	// transform: translateY(1.5%)
+	// margin: 9.5% 1% 1% 1%
+	// flex-grow: .5
+	height: 100%
+	// margin: 0 2.5%
+	z-index: 0
+	color: #000
+	background-color: $bg-primary
+
+
+footer
+
+	background-color: $bg-contrast
+	color: $font-contrast
+	font-size: $font-size-a
+	position: relative
+	flex-shrink: 0
+	bottom: 0
+	width: 100vw
+	height: 20vh
+	padding: 1%
+	z-index: 20
+
+	#copyright
+		position: absolute
+		bottom: 0
+		right: 0

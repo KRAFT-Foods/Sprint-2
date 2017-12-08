@@ -1,0 +1,52 @@
+{% extends 'store/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/detail.js' %}" charset="utf-8"></script>
+{% endblock %}
+
+{% block content %}
+	<div id="details">
+		<img id="picture" src="{{product.picture}}" alt="">
+		<div id="info">
+			<input type="hidden" name="product" value="{{product.pk}}">
+			<h1 id="title">{{product.name}}&#32;<span id="price">£{{product.price|floatformat:0|intcomma}}</span></h1>
+
+
+			<!-- <p id="price"></p> -->
+			<p id="description">This field contains a description for the relevant product</p>
+			<!-- Colors -->
+
+			{% if stock %}
+				<div id="sizes">
+				{% for stockline in stock %}
+					{% if stockline.ammount > 0 %}
+						<input type="radio" name="size" id="{{stockline.size.name}}" value="{{stockline.size.name}}" checked>
+						<label class="size" for="{{stockline.size.name}}">{{stockline.size.name|upper}}</label>
+					{% comment %}
+					{% else %}
+						<p class="warning">OUT OF STOCK</p>
+					{% endcomment %}
+					{% endif %}
+
+				{% endfor %}
+
+
+				</div>
+
+				<input type="button" id="add-to-cart" value="ADD TO CART">
+			{% else %}
+				<p class="size">OUT OF STOCK</p>
+				<input type="button" id="add-to-cart" class="disabled" value="ADD TO SHOPPINGCART">
+			{% endif %}
+
+		</div>
+
+	</div>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+@import "sass/colors"
+@import "sass/banner"
+
+$image: 'https://images.unsplash.com/photo-1434704250778-05cf1ad2b03c?auto=format&fit=crop&w=1650&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+
+
+
+#banner
+	+banner
+
+	#focus
+		+focus($image)
+	#overlay
+		+overlay
+	#title
+		+title
+		// background: saturate(darken(crimson,10%),60%)
+
+		// font-style: normal
+		// width: 17%
+		// padding: 1%
+		// position: absolute
+		// width: 15%
+		// margin: auto
+		// left: 50%
+		// top: 25%
+		// transform: translateX(-50%)
+		// +focuslogo
+
+	#sub-title
+		+sub-title
+
+	#overlaylogo
+		+overlaylogo
+
+
+#trending
+	background: $bg-secondary
+	height: 65vh
+	width: 96%
+	margin: 1%
+	transform: translateY(-4%)
+	padding: 1%
+
+	#heading
+		font-weight: 300
+		width: 98%
+		text-align: center
+		// border-bottom: 1px solid darken($font-complimentary,20%)
+		&:after
+			content: ''
+			display: block
+			margin: auto
+			width: 50%
+			height: 1px
+			background: darken($font-complimentary,10%)
+			// border-bottom: 1px solid
+
+	#products
+		position: relative
+		// width: 95vw
+		// margin: 0 auto
+		display: flex
+		flex-wrap: wrap
+		// padding: 0 auto
+		justify-content: center
+
+		.product
+			position: relative
+			width: 24.4%
+			// height: 45vh
+			height: 50vh
+			margin: 1px
+			margin-left: 0
+			border: none
+			// margin: .25vh
+			// box-shadow: 0px 2px 2px #999
+			// display: flex
+			// flex-wrap: wrap
+			background: #e7e7e7
+
+			*
+				transition: all .3s ease
+
+			img
+				position: absolute
+				width: 100%
+				margin: auto
+				height: 100%
+				top: 0
+				// width: 100%
+				object-fit: contain
+				background: #e7e7e7
+
+
+			.name
+				position: absolute
+				left: 0
+				bottom: 0
+				opacity: 0
+				padding: 4%
+
+				// transition: opacity .3s ease
+
+			.price
+				position: absolute
+				right: 0
+				opacity: 0
+				bottom: 0
+				padding: 4%
+
+			.overlay
+				position: absolute
+				width: 100%
+				height: 100%
+				opacity: 0
+				background: #fff
+				// transition: opacity .3s ease
+
+			&:hover
+				.overlay
+					opacity: .5
+				.name
+					opacity: 1
+				.price
+					opacity: 1

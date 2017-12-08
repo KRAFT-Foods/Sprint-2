@@ -1,0 +1,27 @@
+{% extends 'store/base.html' %}
+{% load staticfiles %}
+{% load filters %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div id="banner">
+		<div id="focus"><div id="overlay"></div></div>
+		<h1 id="title">ABOUT KRAFT</h1>
+		<h4 id="sub-title"></h1>
+	</div>
+	<div id="content">
+		<div class="text">
+			<span class="highlight">Influential, innovative and progressive</span>, Kraft is <span class="highlight">reinventing</span> a wholly modern approach to fashion.
+			Under the new vision of creative director <br><span class="highlight">Roberto D'Antonio</span>, the House has redefined <span class="highlight">luxury</span> for the 21st century,
+			further reinforcing its position as one of the world’s <span class="highlight">most desirable</span> fashion houses. Eclectic, contemporary,
+			Krafts products represent the pinnacle of Italian craftsmanship and are unsurpassed for their quality and attention to detail.
+			<br><br>
+			Kraft is part of the <span class="highlight">Supreme Group</span>, a world leader in apparel and accessories that owns a portfolio of powerful <span class="highlight">luxury</span> and <span class="highlight">sport</span> and <span class="highlight">lifestyle</span> brands.
+		</div>
+	</div>
+
+
+{% endblock %}

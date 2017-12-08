@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+{% load filters %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div id="banner">
+		<div id="focus">
+			<div id="overlay"></div>
+			<!-- <div id="overlaylogo"> s</div> -->
+		</div>
+		<h1 id="title">K R A F T</h1>
+		<!-- <img id="title" src="{% static 'assets/logo.png' %}"> -->
+		<h4 id="sub-title">{{gender}}'s collection</h1>
+	</div>
+	<div id="trending">
+		<h1 id="heading">TRENDING NOW</h1>
+		<div id="products">
+			{% for product in trending %}
+				<a href="{% url 'detail' gender=gender department=product.category.department.name category=product.category.name product=product.pk %}" class="product">
+					<img src="{{product.picture}}" alt="{{product.picture}}">
+					<span class="overlay"></span>
+					<span class="name">{{ product.name }}</span>
+					<span class="price">£{{product.price|floatformat:0|intcomma }}</span>
+				</a>
+				{% empty %}
+				No items found..
+				{% endfor %}
+		</div>
+	</div>
+{% endblock %}

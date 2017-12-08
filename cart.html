@@ -1,0 +1,41 @@
+{% extends 'store/base.html' %}
+{% load staticfiles %}
+{% load filters %}
+{% load humanize %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+<div id="banner">
+	<div id="focus"><div id="overlay"></div></div>
+	<h1 id="title">CART</h1>
+</div>
+<div id="cart">
+	<div id="products">
+		<h3>YOUR SELECTIONS</h3>
+		<div class='hr'></div>
+		{% for item in cart %}
+			<div class="product">
+				<img src="{{item.product.picture}}" alt="">
+				<p class="detail name">{{item.product}}</p>
+				<p class="detail size">{{item.size}}</p>
+				<p class="detail price">£{{item.product.price|multiply:item.ammount|floatformat:0|intcomma}}</p>
+				<input type="number" class="detail ammount" name="{{item.id}}" value="{{item.ammount}}">
+				<p class="detail delete">x</p>
+			</div>
+			<div class='hr'></div>
+		{% empty %}
+			<p>No products in cart..</p>
+		{%  endfor %}
+	</div>
+	<div id="summary">
+		<p>Subtotal: <span>£{{subtotal|floatformat:0|intcomma}}</span></p>
+		<p>Shipping: <span>£{{shipping|floatformat:0|intcomma}}</span></p>
+		<div class='hr'></div>
+		<p id="total">Total: <span>£{{subtotal|add:shipping|floatformat:0|intcomma}}</span></p>
+		<input type="button" id="checkout" value="CHECKOUT">
+	</div>
+</div>
+{% endblock %}

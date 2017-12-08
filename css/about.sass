@@ -1,0 +1,38 @@
+@import "sass/colors"
+@import "sass/banner"
+
+$image: 'https://images.unsplash.com/photo-1482585411459-d10abb0e9d3e?auto=format&fit=crop&w=1653&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+
+#banner
+	+banner
+	height: 40vh
+	#focus
+		+focus($image)
+		background-position: center
+	#overlay
+		+overlay
+	#title
+		+title
+	#sub-title
+		+sub-title
+
+
+#content
+	height: 34vh
+	background: $bg-secondary
+	margin: 0 1%
+	padding: 2%
+	display: flex
+	align-items: center
+
+
+	.text
+		max-width: 40vw
+		font-size: 95%
+		font-weight: 300
+		margin: auto
+		line-height: 150%
+
+	.highlight
+		font-size: 97%
+		color: darken($font-complimentary,10%)

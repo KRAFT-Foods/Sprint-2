@@ -1,0 +1,177 @@
+@import "sass/colors"
+
+main
+	display: flex
+	flex-direction: column
+	transform: translateY(-2.6%)
+	overflow-x: hidden
+
+.hr
+	background: darken($font-complimentary,20%)
+	height: 1px
+	opacity: .5
+	width: 100
+
+#hr-old
+	// transform: translateX(-5%)
+	width: 93%
+	height: 1px
+	background: linear-gradient(90deg,$bg-secondary,$font-complimentary,$bg-secondary)
+	text-align: center
+
+	&:after
+		// content: '§'
+		content: '♣'
+		display: inline-block
+		position: relative
+		top: -14px
+		padding: 1%
+		background: $bg-secondary
+		color: $font-complimentary
+		font-size: 90%
+		// transform: rotate(60deg)
+
+
+#banner
+	position: relative
+	width: 102%
+	left: -2%
+	height: 30vh
+	background: $bg-contrast
+
+	#focus
+		position: absolute
+		background: url('https://www.muralswallpaper.com/app/uploads/purple-and-pink-dark-floral-plain.jpg')
+		// background: url('https://img00.deviantart.net/663f/i/2017/076/8/4/the_beautiful_forest_by_zuzannap-db2lu79.jpg')
+		filter: blur(1px) saturate(150%) hue-rotate(15deg)
+		background-size: cover
+		background-position: center
+		overflow: hidden
+		width: 100%
+		height: 100%
+		// background: $bg-contrast
+		// opacity: .3
+
+		#overlay
+			opacity: .3
+			width: 100%
+			height: 100%
+			background: $bg-contrast
+
+
+	#title
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		opacity: 1
+		text-align: center
+		width: 100%
+		z-index: 1000
+		filter: blur(0)
+		color: $font-contrast
+		padding: auto
+		margin: auto
+		font-size: 200%
+		font-weight: bold
+		font-style: italic
+
+			// align-self: center
+			// padding: auto
+			// top: 0
+			// bottom: 0
+
+#cart
+	top: 0
+	background: $bg-secondary
+	width: 94%
+	// height: 40vh
+	padding: 2%
+	margin: 1%
+	display: flex
+	justify-content: space-between
+
+	#products
+		flex-grow: 1
+		padding-top: 0
+		margin-right: 2.5%
+
+		h3
+			font-size: 80%
+			font-weight: 300
+
+	.product
+		font-weight: 300
+		margin: auto
+
+		// width: 50%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		// text-align: left
+		padding: 1%
+
+		img
+			width: 20%
+			height: 5%
+
+		.detail
+			// position: relative
+			// top: 50%
+			// transform: translateY(-50%)
+			// margin: auto 0
+			// height: 100%
+			display: inline-block
+			width: 8vw
+			// background: red
+			padding: 2%
+
+		.ammount
+			background: none
+			border: none
+			font-size: 90%
+			font-weight: 300
+			text-align: right
+
+			&:focus
+				outline: none
+
+
+
+		// .name
+		// 	width: 50vw
+		//
+		// .size
+		// 	width: 50vw
+		//
+		// .price
+		// 	width: 50vw
+		//
+		// .ammount
+		// 	width: 50vw
+
+
+	#summary
+		width: 40vw
+		height: 25vh
+		padding: 2%
+		background: $bg-primary
+
+		p
+			position: relative
+			font-size: 80%
+			font-weight: 300
+
+			span
+				position: absolute
+				right: 0
+		#total
+			font-size: 100%
+			font-weight: 400
+
+		#checkout
+			width: 100%
+			border: none
+			background: $bg-contrast
+			color: $font-contrast
+			padding: 4%
+			cursor: pointer

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+main {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-2.6%);
+  overflow-x: hidden; }
+
+.hr {
+  background: #886f1d;
+  height: 1px;
+  opacity: 0.5;
+  width: 100; }
+
+#hr-old {
+  width: 93%;
+  height: 1px;
+  background: linear-gradient(90deg, #e7e7e7, #D4AF37, #e7e7e7);
+  text-align: center; }
+  #hr-old:after {
+    content: "♣";
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    padding: 1%;
+    background: #e7e7e7;
+    color: #D4AF37;
+    font-size: 90%; }
+
+#banner {
+  position: relative;
+  width: 102%;
+  left: -2%;
+  height: 30vh;
+  background: #303031; }
+  #banner #focus {
+    position: absolute;
+    background: url("https://www.muralswallpaper.com/app/uploads/purple-and-pink-dark-floral-plain.jpg");
+    filter: blur(1px) saturate(150%) hue-rotate(15deg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%; }
+    #banner #focus #overlay {
+      opacity: 0.3;
+      width: 100%;
+      height: 100%;
+      background: #303031; }
+  #banner #title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+    filter: blur(0);
+    color: #fff;
+    padding: auto;
+    margin: auto;
+    font-size: 200%;
+    font-weight: bold;
+    font-style: italic; }
+
+#cart {
+  top: 0;
+  background: #e7e7e7;
+  width: 94%;
+  padding: 2%;
+  margin: 1%;
+  display: flex;
+  justify-content: space-between; }
+  #cart #products {
+    flex-grow: 1;
+    padding-top: 0;
+    margin-right: 2.5%; }
+    #cart #products h3 {
+      font-size: 80%;
+      font-weight: 300; }
+  #cart .product {
+    font-weight: 300;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%; }
+    #cart .product img {
+      width: 20%;
+      height: 5%; }
+    #cart .product .detail {
+      display: inline-block;
+      width: 8vw;
+      padding: 2%; }
+    #cart .product .ammount {
+      background: none;
+      border: none;
+      font-size: 90%;
+      font-weight: 300;
+      text-align: right; }
+      #cart .product .ammount:focus {
+        outline: none; }
+  #cart #summary {
+    width: 40vw;
+    height: 25vh;
+    padding: 2%;
+    background: #fff; }
+    #cart #summary p {
+      position: relative;
+      font-size: 80%;
+      font-weight: 300; }
+      #cart #summary p span {
+        position: absolute;
+        right: 0; }
+    #cart #summary #total {
+      font-size: 100%;
+      font-weight: 400; }
+    #cart #summary #checkout {
+      width: 100%;
+      border: none;
+      background: #303031;
+      color: #fff;
+      padding: 4%;
+      cursor: pointer; }
+
+/*# sourceMappingURL=cart.css.map */
